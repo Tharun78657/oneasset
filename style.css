@@ -1630,14 +1630,16 @@ img {
   .hero {
     height: auto;
     min-height: 100svh;
-    padding-top: 25px !important; /* Move map section higher */
+    padding-top: 25px !important;
+    /* Move map section higher */
   }
 
   .hero-content {
     flex-direction: column-reverse;
     text-align: center;
     padding: 10px 6% 60px !important;
-    gap: 20px !important; /* Pulled text and image closer */
+    gap: 20px !important;
+    /* Pulled text and image closer */
     align-items: center;
     justify-content: center;
   }
@@ -1719,7 +1721,8 @@ img {
     max-width: 240px;
     justify-content: center;
     margin-bottom: 5px;
-    margin-top: -15px; /* Pull higher toward logo */
+    margin-top: -15px;
+    /* Pull higher toward logo */
   }
 
   .hero-image-wrapper img {
@@ -1813,7 +1816,8 @@ img {
 
   .accordion-panel {
     flex: unset !important;
-    height: 70px !important; /* Slim when closed */
+    height: 70px !important;
+    /* Slim when closed */
     border-radius: 10px !important;
     width: 100% !important;
     overflow: hidden !important;
@@ -1823,7 +1827,8 @@ img {
   }
 
   .accordion-panel.active {
-    height: 400px !important; /* Expanded when open */
+    height: 400px !important;
+    /* Expanded when open */
     flex: unset !important;
   }
 
@@ -1855,7 +1860,8 @@ img {
 
   /* Showing title even when closed (centered) */
   .accordion-panel:not(.active)::after {
-    content: attr(data-title); /* Assuming I add this or just rely on CSS */
+    content: attr(data-title);
+    /* Assuming I add this or just rely on CSS */
     position: absolute;
     top: 50%;
     left: 50%;
@@ -1868,7 +1874,7 @@ img {
     font-size: 0.9rem;
     width: 100%;
     text-align: center;
-    text-shadow: 0 2px 4px rgba(0,0,0,0.5);
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
   }
 
   /* --- LOCATION --- */
@@ -2288,6 +2294,21 @@ img {
   margin: 0;
 }
 
+.designed-by {
+  color: #888 !important;
+}
+
+.designed-by a {
+  color: #1d1c1c;
+  font-weight: 600;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.designed-by a:hover {
+  color: blue;
+}
+
 .social-links-footer {
   display: flex;
   gap: 20px;
@@ -2326,4 +2347,39 @@ img {
     flex-direction: column;
     text-align: center;
   }
+}
+/* SUCCESS MODAL STYLES */
+.success-content {
+  text-align: center;
+  padding: 50px 40px !important;
+}
+
+.success-icon {
+  width: 80px;
+  height: 80px;
+  background-color: #4CAF50;
+  color: white;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 25px;
+}
+
+.success-icon svg {
+  width: 40px;
+  height: 40px;
+}
+
+.success-content h3 {
+  font-size: 2.2rem !important;
+  margin-bottom: 15px !important;
+  color: #111 !important;
+}
+
+.success-content p {
+  color: #666 !important;
+  font-size: 1.1rem !important;
+  line-height: 1.6 !important;
+  margin: 0 !important;
 }

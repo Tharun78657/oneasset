@@ -267,14 +267,16 @@
       <div class="title-separator mx-auto"></div>
 
       <div class="amenities-accordion mt-5">
-        <div class="accordion-panel active" data-title="Swimming Pool" style="background-image: url('images/swimming.jpg');">
+        <div class="accordion-panel active" data-title="Swimming Pool"
+          style="background-image: url('images/swimming.jpg');">
           <div class="panel-content">
             <h3>Infinity Swimming Pool</h3>
             <p>Immerse yourself in a 10,000 sq.ft. infinity-edge pool overlooking the skyline — a serene escape that
               blends luxury, leisure, and breathtaking city views.</p>
           </div>
         </div>
-        <div class="accordion-panel" data-title="Banquette Hall" style="background-image: url('images/download\ \(2\).jpg');">
+        <div class="accordion-panel" data-title="Banquette Hall"
+          style="background-image: url('images/download\ \(2\).jpg');">
           <div class="panel-content">
             <h3>Banquette Hall</h3>
             <p>A grand space to celebrate special occasions and host elegant gatherings.</p>
@@ -292,19 +294,22 @@
             <p>State-of-the-art fitness equipment for your daily workout regimen.</p>
           </div>
         </div>
-        <div class="accordion-panel" data-title="Children's Play" style="background-image: url('images/childrens.jpg');">
+        <div class="accordion-panel" data-title="Children's Play"
+          style="background-image: url('images/childrens.jpg');">
           <div class="panel-content">
             <h3>Children's Play Area</h3>
             <p>A safe zone designed for fun, play, and growth.</p>
           </div>
         </div>
-        <div class="accordion-panel" data-title="Landscaped Park" style="background-image: url('images/Landscaped\ Park.png');">
+        <div class="accordion-panel" data-title="Landscaped Park"
+          style="background-image: url('images/Landscaped\ Park.png');">
           <div class="panel-content">
             <h3>Landscaped Park</h3>
             <p>Beautifully manicured gardens offering peace and tranquility.</p>
           </div>
         </div>
-        <div class="accordion-panel" data-title="Outdoor Sitout" style="background-image: url('images/outdoor\ sitout.png');">
+        <div class="accordion-panel" data-title="Outdoor Sitout"
+          style="background-image: url('images/outdoor\ sitout.png');">
           <div class="panel-content">
             <h3>Outdoor Sitout Area</h3>
             <p>Relax and unwind in our premium structured outdoor lounging spaces.</p>
@@ -322,8 +327,10 @@
     </div>
     <div class="container reveal">
       <div class="map-container">
-        <iframe src="https://maps.google.com/maps?q=17.472852,78.315267&ll=17.471,78.315267&t=&z=16&ie=UTF8&iwloc=&output=embed" width="100%"
-          height="100%" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
+        <iframe
+          src="https://maps.google.com/maps?q=17.472852,78.315267&ll=17.471,78.315267&t=&z=16&ie=UTF8&iwloc=&output=embed"
+          width="100%" height="100%" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false"
+          tabindex="0"></iframe>
       </div>
 
       <div class="connectivity-card compact-card">
@@ -526,6 +533,8 @@
     <div class="container">
       <div class="footer-bottom-new">
         <p>&copy; 2026 AssetOne Nallagandla. All rights reserved.</p>
+        <p class="designed-by">Designed by <a href="https://digitalwin.in/" target="_blank">Digital win technologies</a>
+        </p>
         <div class="social-links-footer">
           <a href="#">Facebook</a>
           <a href="#">Instagram</a>
@@ -666,8 +675,52 @@
       window.addEventListener('keydown', (e) => {
         if (e.key === 'Escape' && modal.classList.contains('show')) closeModal();
       });
+
+      // 5. FORM SUBMISSION LOGIC
+      const successModal = document.getElementById('successModal');
+      const closeSuccessBtn = document.getElementById('closeSuccess');
+      const successOverlay = document.getElementById('successOverlay');
+      const nextStepForm = document.getElementById('next-step-form');
+      const modalEnquiryForm = document.getElementById('modal-enquiry-form');
+
+      function showSuccess() {
+        if (typeof closeModal === 'function') closeModal();
+        successModal.classList.add('show');
+        document.body.style.overflow = 'hidden';
+      }
+
+      function closeSuccess() {
+        successModal.classList.remove('show');
+        document.body.style.overflow = '';
+      }
+
+      const handleFormSubmit = (e) => {
+        e.preventDefault();
+        showSuccess();
+        e.target.reset();
+      };
+
+      if (nextStepForm) nextStepForm.addEventListener('submit', handleFormSubmit);
+      if (modalEnquiryForm) modalEnquiryForm.addEventListener('submit', handleFormSubmit);
+      if (closeSuccessBtn) closeSuccessBtn.addEventListener('click', closeSuccess);
+      if (successOverlay) successOverlay.addEventListener('click', closeSuccess);
     });
   </script>
+
+  <!-- SUCCESS MODAL -->
+  <div id="successModal" class="modal">
+    <div class="modal-overlay" id="successOverlay"></div>
+    <div class="modal-content success-content">
+      <div class="success-icon">
+        <svg viewBox="0 0 24 24" width="40" height="40">
+          <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41L9 16.17z" fill="currentColor" />
+        </svg>
+      </div>
+      <h3>Thank You!</h3>
+      <p>We have received your enquiry. We will call you in 24 hrs.</p>
+      <button class="btn-primary" id="closeSuccess" style="width: 100%; margin-top: 20px;">Okay</button>
+    </div>
+  </div>
 </body>
 
 </html>
