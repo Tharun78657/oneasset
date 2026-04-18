@@ -1545,6 +1545,87 @@ img {
   transform: scale(1.1);
 }
 
+/* FLOOR PLANS SECTION */
+.floor-plans {
+  background: white;
+  padding: 80px 0;
+}
+
+.floor-plans-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+  margin-top: 50px;
+}
+
+.floor-plan-card {
+  background: #fff;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.05);
+  border: 1px solid rgba(0, 0, 0, 0.03);
+  transition: var(--transition-smooth);
+}
+
+.floor-plan-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 30px 60px rgba(0, 0, 0, 0.1);
+  border-color: var(--primary-color);
+}
+
+.floor-plan-img {
+  width: 100%;
+  height: 350px;
+  overflow: hidden;
+  background: #f9f9f9;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
+
+.floor-plan-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  transition: transform 0.6s ease;
+}
+
+.floor-plan-card:hover .floor-plan-img img {
+  transform: scale(1.05);
+}
+
+.floor-plan-info {
+  padding: 25px;
+  text-align: center;
+}
+
+.floor-plan-info h3 {
+  font-family: var(--font-body);
+  font-weight: 700;
+  font-size: 1.5rem;
+  color: brown;
+  margin-bottom: 5px;
+}
+
+.floor-plan-info p {
+  color: #666;
+  font-size: 0.95rem;
+}
+
+/* Responsive Floor Plans */
+@media (max-width: 900px) {
+  .floor-plans-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 600px) {
+  .floor-plans-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
 /* ============================================================
    LARGE TABLETS  (max 1024px)
    ============================================================ */
@@ -2148,12 +2229,39 @@ img {
   color: var(--primary-color);
 }
 
+/* LIGHTBOX MODAL */
+.lightbox-modal {
+  z-index: 3000;
+}
+
+.lightbox-modal .modal-overlay {
+  background: rgba(0, 0, 0, 0.95);
+}
+
+.lightbox-content {
+  position: relative;
+  z-index: 3100;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  max-width: 90%;
+  max-height: 90%;
+}
+
+.lightbox-content img {
+  box-shadow: 0 0 50px rgba(0, 0, 0, 0.5);
+  transition: transform 0.4s ease;
+}
+
+.floor-plan-img img {
+  cursor: zoom-in;
+}
+
 /* SIDE TAB STICKY */
-.side-enquire-tab {
+.side-enquire-tab,
+.side-layout-tab {
   position: fixed;
   right: 0;
-  top: 50%;
-  transform: translateY(-50%);
   background: var(--primary-color);
   color: #fff;
   padding: 12px 10px;
@@ -2167,26 +2275,65 @@ img {
   transition: all 0.3s ease;
 }
 
-.side-enquire-tab:hover {
+.side-enquire-tab {
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.side-layout-tab {
+  top: calc(50% + 130px);
+  /* Increased gap */
+  transform: translateY(-50%);
+  background: #a12b00;
+  /* Distinct color for Layout */
+}
+
+.side-enquire-tab:hover,
+.side-layout-tab:hover {
   background: var(--primary-dark);
 }
 
-.side-enquire-tab span {
+.side-layout-tab:hover {
+  background: #c13b00;
+}
+
+.side-enquire-tab span,
+.side-layout-tab span {
   writing-mode: vertical-rl;
   text-transform: uppercase;
   letter-spacing: 1.5px;
   font-weight: 700;
   font-size: 0.75rem;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.side-layout-tab svg {
+  width: 16px;
+  height: 16px;
+  stroke: white;
+  stroke-width: 2.5;
+  transform: rotate(90deg);
+  /* Adjust for vertical text */
 }
 
 @media (max-width: 480px) {
-  .side-enquire-tab {
+  .side-enquire-tab,
+  .side-layout-tab {
     padding: 10px 6px;
-    top: 70%;
-    /* Move down to avoid hero overlap */
   }
 
-  .side-enquire-tab span {
+  .side-enquire-tab {
+    top: 55%;
+  }
+
+  .side-layout-tab {
+    top: calc(55% + 110px);
+  }
+
+  .side-enquire-tab span,
+  .side-layout-tab span {
     font-size: 0.65rem;
   }
 }

@@ -22,6 +22,8 @@
         <li><a href="#about" class="nav-close-link">About</a></li>
         <li><a href="#amenities" class="nav-close-link">Amenities</a></li>
         <li><a href="#location" class="nav-close-link">Location</a></li>
+        <li><a href="#floor-plans" class="nav-close-link">Floor Plans</a></li>
+        <li><a href="#booking">Booking Process</a></li>
         <li><a href="javascript:void(0)" class="btn-primary enquire-trigger"
             style="padding: 10px 25px; color: white !important;">Enquire Now</a></li>
       </ul>
@@ -34,7 +36,7 @@
       <div class="hero-text-align-left">
         <p class="subtitle coming-soon-badge"><span>Coming Soon</span> PRE-LAUNCH IN NALLAGANDLA</p>
         <h1>Invest Early.<br><span class="highlight">Gain Maximum.</span></h1>
-        <p class="hero-desc">1BHK Fully Furnished Apartments &middot; 550 - 650 Sft<br>Discover the ultimate investment
+        <p class="hero-desc">1BHK Fully Furnished Apartments &middot; 510 - 615 Sft<br>Discover the ultimate investment
           advantage.</p>
         <div class="hero-buttons mt-4">
           <a href="javascript:void(0)" class="btn-primary enquire-trigger">Book a Site Visit</a>
@@ -65,7 +67,7 @@
             </div>
             <div class="feature-item reveal delay-3">
               <span class="check-icon">✓</span>
-              <span>550 - 650 Square Feet</span>
+              <span>510 - 615 Square Feet</span>
             </div>
             <div class="feature-item reveal delay-4">
               <span class="check-icon">✓</span>
@@ -251,6 +253,43 @@
               <p>Investors who enter now benefit from the lowest available pricing before the official launch
                 appreciation.</p>
             </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FLOOR PLANS SECTION -->
+  <section class="section floor-plans reveal" id="floor-plans">
+    <div class="container text-center">
+      <h2 class="section-title">Floor Plans</h2>
+      <div class="title-separator mx-auto"></div>
+      <div class="floor-plans-grid">
+        <div class="floor-plan-card reveal delay-1">
+          <div class="floor-plan-img">
+            <img src="images/510 sft.jpg" alt="510 Sft Floor Plan">
+          </div>
+          <div class="floor-plan-info">
+            <h3>510 Sft</h3>
+            <p>1 BHK Premium Unit</p>
+          </div>
+        </div>
+        <div class="floor-plan-card reveal delay-2">
+          <div class="floor-plan-img">
+            <img src="images/557 sft.jpg" alt="557 Sft Floor Plan">
+          </div>
+          <div class="floor-plan-info">
+            <h3>557 Sft</h3>
+            <p>1 BHK Spacious Unit</p>
+          </div>
+        </div>
+        <div class="floor-plan-card reveal delay-3">
+          <div class="floor-plan-img">
+            <img src="images/615 sft.jpg" alt="615 Sft Floor Plan">
+          </div>
+          <div class="floor-plan-info">
+            <h3>615 Sft</h3>
+            <p>1 BHK Luxury Unit</p>
           </div>
         </div>
       </div>
@@ -511,6 +550,7 @@
           <li><a href="#about">About Project</a></li>
           <li><a href="#amenities">Amenities</a></li>
           <li><a href="#location">Location</a></li>
+          <li><a href="#floor-plans">Floor Plans</a></li>
           <li><a href="#booking">Booking Process</a></li>
           <li><a href="#next-step-contact">Contact Us</a></li>
         </ul>
@@ -525,7 +565,7 @@
         </address>
         <div class="contact-items">
           <p><span>Email:</span> contact@assetone.com</p>
-          <p><span>Phone:</span> +91 90000 00000</p>
+          <p><span>Phone:</span> +91 88855 54050</p>
         </div>
       </div>
     </div>
@@ -550,6 +590,15 @@
     <span>Enquire Now</span>
   </div>
 
+  <div class="side-layout-tab layout-trigger">
+    <span>Layout
+      <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M12 15V3m0 12l-4-4m4 4l4-4M2 17l.621 2.485A2 2 0 004.561 21h14.878a2 2 0 001.94-1.515L22 17"
+          stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" />
+      </svg>
+    </span>
+  </div>
+
   <!-- ENQUIRY MODAL -->
   <div id="enquiryModal" class="modal">
     <div class="modal-overlay" id="modalOverlay"></div>
@@ -557,8 +606,9 @@
       <button class="modal-close" id="closeModal">&times;</button>
       <div class="form-card highlight-form"
         style="background: #ffffff; padding: 40px; border-radius: 12px; color: #000; box-shadow: none; border: none;">
-        <h3 style="font-size: 2rem; color: #000; margin-bottom: 5px; font-weight: 600;">Enquire Now</h3>
-        <p style="color: #666; font-size: 0.95rem; margin-bottom: 30px;">Speak with our investment experts for exclusive
+        <h3 id="modalTitle" style="font-size: 2rem; color: #000; margin-bottom: 5px; font-weight: 600;">Enquire Now</h3>
+        <p id="modalSubtitle" style="color: #666; font-size: 0.95rem; margin-bottom: 30px;">Speak with our investment
+          experts for exclusive
           offers.</p>
         <form id="modal-enquiry-form">
           <div class="input-group" style="margin-bottom: 20px;">
@@ -577,7 +627,7 @@
             <textarea placeholder="Your Message" rows="3"
               style="width: 100%; padding: 15px 20px; border: 1px solid #ddd; border-radius: 4px; font-family: var(--font-body); font-size: 1rem; background: #fdfdfd; color: #000; resize: vertical;"></textarea>
           </div>
-          <button type="submit" class="btn-primary"
+          <button type="submit" class="btn-primary" id="modalSubmitBtn"
             style="width: 100%; height: auto; text-align: center; border-radius: 4px;">GET PRIORITY ACCESS</button>
         </form>
       </div>
@@ -648,11 +698,28 @@
 
       // 4. ENQUIRY MODAL LOGIC
       const modal = document.getElementById('enquiryModal');
-      const openModalBtns = document.querySelectorAll('.enquire-trigger');
+      const openModalBtns = document.querySelectorAll('.enquire-trigger, .layout-trigger');
       const closeModalBtn = document.getElementById('closeModal');
       const modalOverlay = document.getElementById('modalOverlay');
+      const modalTitle = document.getElementById('modalTitle');
+      const modalSubtitle = document.getElementById('modalSubtitle');
+      const modalSubmitBtn = document.getElementById('modalSubmitBtn');
 
-      function openModal() {
+      let triggerSource = 'enquire';
+
+      function openModal(source) {
+        triggerSource = source || 'enquire';
+
+        if (triggerSource === 'layout') {
+          modalTitle.textContent = "Download Layout";
+          modalSubtitle.textContent = "Enter your details to download the floor plan PDF.";
+          modalSubmitBtn.textContent = "VERIFY & DOWNLOAD";
+        } else {
+          modalTitle.textContent = "Enquire Now";
+          modalSubtitle.textContent = "Speak with our investment experts for exclusive offers.";
+          modalSubmitBtn.textContent = "GET PRIORITY ACCESS";
+        }
+
         modal.classList.add('show');
         document.body.style.overflow = 'hidden';
       }
@@ -665,7 +732,8 @@
       openModalBtns.forEach(btn => {
         btn.addEventListener('click', (e) => {
           e.preventDefault();
-          openModal();
+          const source = btn.classList.contains('layout-trigger') ? 'layout' : 'enquire';
+          openModal(source);
         });
       });
 
@@ -697,6 +765,13 @@
       const handleFormSubmit = (e) => {
         e.preventDefault();
         showSuccess();
+
+        if (triggerSource === 'layout') {
+          setTimeout(() => {
+            window.open('images/Plans_Service Apartment_Nalagandla_07.04.2026.pdf', '_blank');
+          }, 1000);
+        }
+
         e.target.reset();
       };
 
@@ -704,6 +779,33 @@
       if (modalEnquiryForm) modalEnquiryForm.addEventListener('submit', handleFormSubmit);
       if (closeSuccessBtn) closeSuccessBtn.addEventListener('click', closeSuccess);
       if (successOverlay) successOverlay.addEventListener('click', closeSuccess);
+
+      // 6. LIGHTBOX LOGIC
+      const lightbox = document.getElementById('lightboxModal');
+      const lightboxImg = document.getElementById('lightboxImage');
+      const floorPlanImages = document.querySelectorAll('.floor-plan-img img');
+      const closeLightboxBtn = document.getElementById('closeLightbox');
+      const lightboxOverlay = document.getElementById('lightboxOverlay');
+
+      function openLightbox(src) {
+        lightboxImg.src = src;
+        lightbox.classList.add('show');
+        document.body.style.overflow = 'hidden';
+      }
+
+      function closeLightbox() {
+        lightbox.classList.remove('show');
+        document.body.style.overflow = '';
+      }
+
+      floorPlanImages.forEach(img => {
+        img.addEventListener('click', () => {
+          openLightbox(img.src);
+        });
+      });
+
+      if (closeLightboxBtn) closeLightboxBtn.addEventListener('click', closeLightbox);
+      if (lightboxOverlay) lightboxOverlay.addEventListener('click', closeLightbox);
     });
   </script>
 
@@ -719,6 +821,16 @@
       <h3>Thank You!</h3>
       <p>We have received your enquiry. We will call you in 24 hrs.</p>
       <button class="btn-primary" id="closeSuccess" style="width: 100%; margin-top: 20px;">Okay</button>
+    </div>
+  </div>
+
+  <!-- LIGHTBOX MODAL -->
+  <div id="lightboxModal" class="modal lightbox-modal">
+    <div class="modal-overlay" id="lightboxOverlay"></div>
+    <div class="lightbox-content">
+      <button class="modal-close" id="closeLightbox" style="color: black; font-size: 3rem;">&times;</button>
+      <img src="" alt="Floor Plan Large" id="lightboxImage"
+        style="max-width: 100%; max-height: 90vh; object-fit: contain; border-radius: 8px;">
     </div>
   </div>
 </body>
